@@ -5,6 +5,15 @@ defmodule Broad.Sender do
 
   require Logger
 
+  def generate_some_emails(count \\ 10) do
+    1..count |> Enum.map(&"#{&1}@hell.com")
+  end
+
+  def notify_all(emails) do
+    emails
+    |> Enum.each(&send_email/1)
+  end
+
   def send_email(email) do
     Process.sleep(around_seconds(3))
     Logger.info("Sent email", email: email)
