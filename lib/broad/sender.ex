@@ -11,7 +11,9 @@ defmodule Broad.Sender do
 
   def notify_all(emails) do
     emails
-    |> Enum.each(&send_email/1)
+    |> Enum.each(fn email ->
+      Task.start(fn -> send_email(email) end)
+    end)
   end
 
   def send_email(email) do
@@ -20,7 +22,7 @@ defmodule Broad.Sender do
     {:ok, :email_sent}
   end
 
-  defp around_seconds(seconds, miliseconds_variance \\ 300) do
+  defp around_seconds(seconds, miliseconds_variance \\ 600) do
     seconds * @one_second + variance(miliseconds_variance)
   end
 
