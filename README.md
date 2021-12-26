@@ -1,21 +1,6 @@
 # Broad
 
-**TODO: Add description**
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `broad` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:broad, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/broad](https://hexdocs.pm/broad).
-
+Notes and source code for the [Concurrent Data Processing in
+Elixir](https://learning.oreilly.com/library/view/concurrent-data-processing/9781680508956/).  Aimed
+mostly to learn [the `Broadway` library](https://elixir-broadway.org/).
