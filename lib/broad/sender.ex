@@ -11,15 +11,16 @@ defmodule Broad.Sender do
 
   def notify_all(emails) do
     emails
-    |> Enum.each(fn email ->
-      Task.start(fn -> send_email(email) end)
+    |> Enum.map(fn email ->
+      Task.async(fn -> send_email(email) end)
     end)
+    |> Enum.map(&Task.await/1)
   end
 
   def send_email(email) do
     Process.sleep(around_seconds(3))
     Logger.info("Sent email", email: email)
-    {:ok, :email_sent}
+    {:ok, {:email_sent, email}}
   end
 
   defp around_seconds(seconds, miliseconds_variance \\ 600) do

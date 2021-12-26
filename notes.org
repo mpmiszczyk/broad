@@ -2,6 +2,8 @@
 
 Lets try keeping notes in this way.
 
+
+
 * INBOX
 
 * QUESTIONS
@@ -12,5 +14,15 @@ Lets try keeping notes in this way.
 
 ** Chapter 1 - The =Task= Module
 
+*** how to to
 
+The content at the very begginign is quite simple.  At least for me.
+The idea than would be to read some part of the book, and only if
+needed try to implement it to play around with stuff.  I've started
+that way at the very beginning - read some, and than decided that code
+base could be beneficial.
+
+What I liked in particular was this process of catching up.  You code,
+you know where are you trying to get to, and while trying to this on
+your own you see which gaps still do require filling up.
 
