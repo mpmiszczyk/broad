@@ -1,0 +1,16 @@
+#+TODO: NEXT TODO CHECK | DROP DONE
+
+Lets try keeping notes in this way.
+
+* INBOX
+
+* QUESTIONS
+
+* EXPERIMENTS
+
+* Book
+
+** Chapter 1 - The =Task= Module
+
+
+

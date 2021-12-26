@@ -24,3 +24,7 @@ broad-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+
+# eamcs temporary files
+*.*~
