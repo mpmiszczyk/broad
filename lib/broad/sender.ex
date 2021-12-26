@@ -1,4 +1,4 @@
-defmodule Sender do
+defmodule Broad.Sender do
   @moduledoc false
 
   @one_second 1000
