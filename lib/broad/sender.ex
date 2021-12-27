@@ -18,12 +18,13 @@ defmodule Broad.Sender do
   end
 
   def send_email(email) do
-    Process.sleep(around_seconds(3))
+    Logger.info("Starting", email: email)
+    Process.sleep(around_seconds(4))
     Logger.info("Sent email", email: email)
     {:ok, {:email_sent, email}}
   end
 
-  defp around_seconds(seconds, miliseconds_variance \\ 600) do
+  defp around_seconds(seconds, miliseconds_variance \\ 2000) do
     seconds * @one_second + variance(miliseconds_variance)
   end
 

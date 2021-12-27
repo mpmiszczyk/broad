@@ -61,3 +61,23 @@ implementation, but in fact it is very much synchronous.
   |> Stream.map(collect_result)
   |> Enum.to_list()
 #+end_src
+
+*** =Task.async_stream= does have few interesting options
+
+**** =:max_concurrency=
+
+Still, each data is processed in brand new process.  There is simply
+limit on how many of them is at the same time.
+
+**** =:ordered=
+
+Still, all the data in each step is processed as soon as possible.  We
+are buffering some data before sending it forward to the next step in
+the stream.
+
+**** TODO =:on_timeout=
+
+With =:kill_task= value we are able to process whole collection, even
+if some tasks do not finish correctly.  You will get ={:error, error}=
+for them.  (no original data, and the next step needs to somehow
+handle this data :/).
