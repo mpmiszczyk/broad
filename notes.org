@@ -26,3 +26,38 @@ What I liked in particular was this process of catching up.  You code,
 you know where are you trying to get to, and while trying to this on
 your own you see which gaps still do require filling up.
 
+*** pipe of maps rather than map of pipes
+
+I've starting using pipe of maps.
+
+#+begin_src elixir
+  email
+  |> Enum.map(start_tasks)
+  |> Enum.map(collect_results)
+#+end_src
+
+I'm never a huge fan of repeating =Enum.map= in each line, so I wanted
+to change it into the map of pipe
+
+#+begin_src elixir
+  emials
+  |> Enum.map(fn email ->
+    email
+    |> start_task
+    |> collect_results
+  end)
+#+end_src
+
+Those two are equivalent logically, but will produce totally different
+result in the runtime.
+
+I think that we would have same issue with =Stream='s combined with
+=Task='s. (same issue, or reverse issue) It does look like parallel
+implementation, but in fact it is very much synchronous.
+
+#+begin_src elixir
+  emils
+  |> Stream.map(satrt_task)
+  |> Stream.map(collect_result)
+  |> Enum.to_list()
+#+end_src
