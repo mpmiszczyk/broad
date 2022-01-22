@@ -40,7 +40,7 @@ I'm never a huge fan of repeating =Enum.map= in each line, so I wanted
 to change it into the map of pipe
 
 #+begin_src elixir
-  emials
+  emails
   |> Enum.map(fn email ->
     email
     |> start_task
