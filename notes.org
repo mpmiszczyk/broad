@@ -81,3 +81,7 @@ With =:kill_task= value we are able to process whole collection, even
 if some tasks do not finish correctly.  You will get ={:error, error}=
 for them.  (no original data, and the next step needs to somehow
 handle this data :/).
+
+**** TODO will adding sasl logs help in any way
+
+**** TODO it the parallelism option global or per caller
